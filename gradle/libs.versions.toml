@@ -4,7 +4,7 @@ paper-run = "1.21.11"
 commandapi = "12.1.0"
 flyway = "13.3.0"
 jooq = "3.21.7"
-configurate = "4.2.0-GeyserMC-SNAPSHOT"
+configurate = "4.3.0-GeyserMC-SNAPSHOT"
 colorparser = "4.2.0"
 threadutil = "1.4.0"
 
