@@ -1,7 +1,6 @@
 package io.github.melerodev.welcomemessages.command;
 
 import dev.jorel.commandapi.CommandAPICommand;
-import dev.jorel.commandapi.arguments.BooleanArgument;
 import dev.jorel.commandapi.executors.CommandArguments;
 import io.github.melerodev.welcomemessages.WelcomeMessages;
 import io.github.melerodev.welcomemessages.config.PluginConfig;
@@ -33,8 +32,12 @@ final class WelcomeCommand extends Command {
                     .executes(this::executorReload),
                 new CommandAPICommand("test")
                     .withPermission(BASE_PERM + ".test")
-                    .withOptionalArguments(new BooleanArgument("first-join"))
-                    .executesPlayer(this::executorTest)
+                    .withSubcommands(
+                        new CommandAPICommand("first-join")
+                            .withPermission(BASE_PERM + ".test")
+                            .executesPlayer((player, args) -> { executorTest(player, true); })
+                    )
+                    .executesPlayer((player, args) -> { executorTest(player, false); })
             )
             .executes(this::executorHelp);
     }
@@ -47,8 +50,7 @@ final class WelcomeCommand extends Command {
         sender.sendMessage(Translation.as(plugin.reloadConfiguration() ? "commands.reload.success" : "commands.reload.failure"));
     }
 
-    private void executorTest(Player player, CommandArguments args) {
-        final boolean firstJoin = (boolean) args.getOrDefault("first-join", false);
+    private void executorTest(Player player, boolean firstJoin) {
         final PluginConfig.Profile profile = WelcomeService.profile(player.getWorld());
         if (profile == null) {
             player.sendMessage(Translation.as("commands.test.disabled"));
