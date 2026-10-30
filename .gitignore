@@ -115,17 +115,11 @@ maven-repository/
 ## Gradle
 ##############################
 .gradle/
-gradle/
-gradlew
 
-gradlew.bat
 *.gradle
 gradle-app.setting
 .gradletasknamecache
-gradle.properties
 
-gradle-wrapper.jar
-gradle-wrapper.properties
 .gradle-cache/
 gradle-build/
 out/
@@ -135,7 +129,6 @@ build-cache/
 .gradle/buildOutputCleanup/
 .gradle/configuration-cache/
 
-gradle/wrapper/
 gradle/caches/
 gradle/daemon/
 gradle/native/
