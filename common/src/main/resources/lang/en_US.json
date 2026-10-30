@@ -1,0 +1,18 @@
+{
+  "update-checker": {
+    "running-latest": "<white>You are running the latest version of <plugin_name>!",
+    "update-found-console": "\n\n<white>An update was found for <plugin_name>!\n    <white>Current version: <red>v<version_current>\n    <white>Latest version: <green><click:open_url:'<download_link>'><hover:show_text:'<green>Open Download Page'>v<version_latest></hover></click>\n",
+    "update-found-player": "\n<white>An update was found for <plugin_name>!\n  <dark_gray>• <white>Current version: <red>v<version_current>\n  <dark_gray>• <white>Latest version: <green><click:open_url:'<download_link>'><hover:show_text:'<green>Open Download Page'>v<version_latest></hover></click>\n",
+    "update-failed": "<yellow>Failed to fetch latest version, error: <error>"
+  },
+  "commands": {
+    "help": "\n<white>WelcomeMessages commands:\n  <dark_gray>• <white>/welcomemessages reload: <gray><i>Reloads config.yml and the language files.\n  <dark_gray>• <white>/welcomemessages test [first-join]: <gray><i>Shows you the welcome of your current world.\n",
+    "reload": {
+      "success": "<green>WelcomeMessages reloaded successfully.",
+      "failure": "<red>config.yml has errors, the previous configuration is still in use. Check the console."
+    },
+    "test": {
+      "disabled": "<red>Welcome messages are disabled in this world."
+    }
+  }
+}

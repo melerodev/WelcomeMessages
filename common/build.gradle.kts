@@ -1,0 +1,28 @@
+dependencies {
+    // Core dependencies
+    api(projects.api)
+    api(libs.morepaperlib)
+
+    // API
+    api(libs.javasemver) // Required by VersionWatch
+    api(libs.versionwatch)
+    api(libs.bundles.wordweaver)
+    api(libs.bundles.configurate.core) {
+        isTransitive = false
+    }
+    api(libs.bundles.configurate.yaml) {
+        isTransitive = false
+    }
+    annotationProcessor(libs.configurate.interfaces.ap)
+    api(libs.colorparser.common) {
+        exclude("net.kyori")
+    }
+    api(libs.threadutil.common)
+
+    // Testing - Core
+    testImplementation(libs.annotations)
+    testImplementation(platform(libs.junit.bom))
+    testImplementation(libs.bundles.junit)
+    testRuntimeOnly(libs.slf4j)
+    testRuntimeOnly(libs.paper.api)
+}

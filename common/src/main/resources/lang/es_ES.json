@@ -1,0 +1,18 @@
+{
+  "update-checker": {
+    "running-latest": "<white>¡Estás usando la última versión de <plugin_name>!",
+    "update-found-console": "\n\n<white>¡Hay una actualización disponible para <plugin_name>!\n    <white>Versión actual: <red>v<version_current>\n    <white>Última versión: <green><click:open_url:'<download_link>'><hover:show_text:'<green>Abrir página de descarga'>v<version_latest></hover></click>\n",
+    "update-found-player": "\n<white>¡Hay una actualización disponible para <plugin_name>!\n  <dark_gray>• <white>Versión actual: <red>v<version_current>\n  <dark_gray>• <white>Última versión: <green><click:open_url:'<download_link>'><hover:show_text:'<green>Abrir página de descarga'>v<version_latest></hover></click>\n",
+    "update-failed": "<yellow>No se pudo comprobar la última versión, error: <error>"
+  },
+  "commands": {
+    "help": "\n<white>Comandos de WelcomeMessages:\n  <dark_gray>• <white>/welcomemessages reload: <gray><i>Recarga config.yml y los idiomas.\n  <dark_gray>• <white>/welcomemessages test [first-join]: <gray><i>Te muestra la bienvenida de tu mundo actual.\n",
+    "reload": {
+      "success": "<green>WelcomeMessages recargado correctamente.",
+      "failure": "<red>config.yml tiene errores, se sigue usando la configuración anterior. Revisa la consola."
+    },
+    "test": {
+      "disabled": "<red>Los mensajes de bienvenida están desactivados en este mundo."
+    }
+  }
+}
