@@ -17,7 +17,6 @@ dependencies {
         exclude("net.kyori")
     }
     api(libs.threadutil.bukkit)
-    implementation("com.google.code.gson:gson:2.13.2") // The published wordweaver-json-shaded jar is missing its shaded Gson classes
 
     // Plugin dependencies
     implementation(libs.bstats)
@@ -47,10 +46,8 @@ tasks {
         reloc("space.arim.morepaperlib", "morepaperlib")
         reloc("io.github.milkdrinkers.javasemver", "javasemver")
         reloc("io.github.milkdrinkers.versionwatch", "versionwatch")
-        reloc("io.github.milkdrinkers.wordweaver", "wordweaver")
         reloc("io.github.milkdrinkers.colorparser", "colorparser")
         reloc("io.github.milkdrinkers.threadutil", "threadutil")
-        reloc("com.google.gson", "wordweaver.lib.gson") // Where wordweaver-json expects its shaded Gson
         reloc("org.snakeyaml", "snakeyaml")
         reloc("org.json", "json")
         reloc("dev.jorel.commandapi", "commandapi")
@@ -68,8 +65,15 @@ tasks {
     }
 
     runServer {
-        // Configure the Minecraft version for our task.
-        minecraftVersion(libs.versions.paper.run.get())
+        // Configure the Minecraft version for our task. Override with -PmcVersion=1.20.6 to test other versions.
+        val mcVersion = providers.gradleProperty("mcVersion").getOrElse(libs.versions.paper.run.get())
+        minecraftVersion(mcVersion)
+        runDirectory = layout.projectDirectory.dir("run/$mcVersion") // One folder per version, worlds can't be downgraded
+
+        // Minecraft 26.x requires Java 25, older versions run on Java 21
+        javaLauncher = project.extensions.getByType<JavaToolchainService>().launcherFor {
+            languageVersion = JavaLanguageVersion.of(if (mcVersion.startsWith("1.")) 21 else 25)
+        }
 
         // IntelliJ IDEA debugger setup: https://docs.papermc.io/paper/dev/debugging#using-a-remote-debugger
         jvmArgs("-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005", "-DPaper.IgnoreJavaVersion=true", "-Dcom.mojang.eula.agree=true", "-DIReallyKnowWhatIAmDoingISwear", "-Dpaper.playerconnection.keepalive=6000")
@@ -78,7 +82,7 @@ tasks {
 
         // Automatically install dependencies
         downloadPlugins {
-            github("PlaceholderAPI", "PlaceholderAPI", "2.12.2", "PlaceholderAPI-2.12.2.jar")
+            github("PlaceholderAPI", "PlaceholderAPI", "2.12.3", "PlaceholderAPI-2.12.3.jar")
         }
     }
 }

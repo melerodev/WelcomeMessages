@@ -4,7 +4,7 @@ import dev.jorel.commandapi.CommandAPICommand;
 import dev.jorel.commandapi.CommandAPIPaper;
 import dev.jorel.commandapi.exceptions.WrapperCommandSyntaxException;
 import io.github.milkdrinkers.colorparser.paper.ColorParser;
-import io.github.milkdrinkers.wordweaver.Translation;
+import io.github.melerodev.welcomemessages.translation.Translation;
 import net.kyori.adventure.text.ComponentLike;
 
 import java.io.Serial;

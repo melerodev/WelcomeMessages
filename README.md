@@ -3,7 +3,7 @@
     <img alt="Licencia" src="https://img.shields.io/github/license/melerodev/WelcomeMessages?style=for-the-badge&color=blue&labelColor=141417">
     <img alt="Última versión" src="https://img.shields.io/github/v/release/melerodev/WelcomeMessages?include_prereleases&sort=semver&style=for-the-badge&label=VERSI%C3%93N&labelColor=141417">
     <img alt="CI" src="https://img.shields.io/github/actions/workflow/status/melerodev/WelcomeMessages/ci.yml?style=for-the-badge&labelColor=141417">
-    <img alt="Paper" src="https://img.shields.io/badge/Paper%20%2F%20Folia-1.21.11-2ecc71?style=for-the-badge&labelColor=141417">
+    <img alt="Paper" src="https://img.shields.io/badge/Paper%20%2F%20Folia-1.20.6%20%E2%86%92%2026.3-2ecc71?style=for-the-badge&labelColor=141417">
 </p>
 
 ---
@@ -32,9 +32,12 @@ Construido sobre la plantilla [Minecraft-Plugin-Template](https://github.com/mil
 
 ## Requisitos
 
-- Servidor **Paper** o **Folia** 1.21.11 (o compatible).
-- **Java 21**.
+- Servidor **Paper** o **Folia** de **1.20.6 a 26.3**.
+- **Java 21** (Minecraft 1.20.6 – 1.21.x) o **Java 25** (Minecraft 26.x).
+- No funciona en Spigot ni en versiones anteriores a 1.20.6.
 - Opcional: [PlaceholderAPI](https://modrinth.com/plugin/placeholderapi), [MiniPlaceholders](https://modrinth.com/plugin/miniplaceholders).
+
+Versiones probadas: 1.20.6, 1.21.1, 1.21.4, 1.21.8, 1.21.11, 26.1.2, 26.2 y 26.3.
 
 ## Instalación
 
@@ -172,7 +175,12 @@ language: en_US
 ./gradlew build
 ```
 
-El jar queda en `paper/build/libs/`. Para probarlo en un servidor local: `./gradlew runServer`.
+El jar queda en `paper/build/libs/`. Para probarlo en un servidor local:
+
+```bash
+./gradlew runServer                      # Paper 1.21.11
+./gradlew runServer -PmcVersion=1.20.6   # cualquier otra versión
+```
 
 ## Licencia
 

@@ -6,7 +6,7 @@ import dev.jorel.commandapi.executors.CommandArguments;
 import io.github.melerodev.welcomemessages.WelcomeMessages;
 import io.github.melerodev.welcomemessages.config.PluginConfig;
 import io.github.melerodev.welcomemessages.welcome.WelcomeService;
-import io.github.milkdrinkers.wordweaver.Translation;
+import io.github.melerodev.welcomemessages.translation.Translation;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
