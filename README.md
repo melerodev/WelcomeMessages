@@ -4,6 +4,7 @@
     <img alt="Última versión" src="https://img.shields.io/github/v/release/melerodev/WelcomeMessages?include_prereleases&sort=semver&style=for-the-badge&label=VERSI%C3%93N&labelColor=141417">
     <img alt="CI" src="https://img.shields.io/github/actions/workflow/status/melerodev/WelcomeMessages/ci.yml?style=for-the-badge&labelColor=141417">
     <img alt="Paper" src="https://img.shields.io/badge/Paper%20%2F%20Folia-1.20.6%20%E2%86%92%2026.3-2ecc71?style=for-the-badge&labelColor=141417">
+    <a href="https://discord.gg/rMuWwZzCW2"><img alt="Discord" src="https://img.shields.io/badge/Discord-%C3%9Anete-5865F2?style=for-the-badge&logo=discord&logoColor=white&labelColor=141417"></a>
 </p>
 
 ---
@@ -181,6 +182,14 @@ El jar queda en `paper/build/libs/`. Para probarlo en un servidor local:
 ./gradlew runServer                      # Paper 1.21.11
 ./gradlew runServer -PmcVersion=1.20.6   # cualquier otra versión
 ```
+
+## Soporte
+
+¿Dudas, sugerencias o problemas? Únete a nuestro Discord:
+
+<a href="https://discord.gg/rMuWwZzCW2"><img alt="Únete a nuestro Discord" src="docs/assets/discord.png" width="300"></a>
+
+También puedes abrir una [issue](https://github.com/melerodev/WelcomeMessages/issues).
 
 ## Licencia
 
